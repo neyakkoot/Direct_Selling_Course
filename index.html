@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>நேரடி வணிகமும் தனிநபர் முத்திரையும் | முழுப் பாடம்</title>
+    <!-- Font Awesome for icons (video, expand/collapse) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #eef2f7;
+            font-family: 'Segoe UI', 'Tamil', 'Helvetica Neue', sans-serif;
+            padding: 30px 15px;
+            display: flex;
+            justify-content: center;
+        }
+        .course-container {
+            max-width: 1100px;
+            width: 100%;
+        }
+
+        /* header card */
+        .hero-card {
+            background: linear-gradient(145deg, #ffffff 0%, #f8faff 100%);
+            padding: 35px 30px;
+            border-radius: 40px 40px 40px 0;
+            box-shadow: 0 25px 40px -15px rgba(0,40,80,0.25);
+            margin-bottom: 30px;
+            border-right: 8px solid #f39c12;
+            border-left: 8px solid #2980b9;
+        }
+        .hero-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #1a2639;
+            line-height: 1.3;
+            margin-bottom: 8px;
+        }
+        .hero-sub {
+            font-size: 1.2rem;
+            color: #2c3e50;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+        }
+        .advisor {
+            margin-top: 20px;
+            background: #eafaf1;
+            padding: 12px 22px;
+            border-radius: 60px;
+            display: inline-block;
+            font-weight: 600;
+            color: #1e6f5c;
+            box-shadow: 0 3px 10px rgba(0,100,80,0.1);
+        }
+        .advisor i {
+            margin-right: 8px;
+            color: #c0392b;
+        }
+
+        /* main table (syllabus grid) */
+        .syllabus-panel {
+            background: white;
+            border-radius: 28px;
+            padding: 20px 8px 20px 20px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
+            overflow-x: auto;
+        }
+        .syllabus-panel table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 650px;
+        }
+        .syllabus-panel th {
+            background: #2c3e50;
+            color: white;
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 18px 12px;
+            border-radius: 18px 18px 0 0;
+        }
+        .syllabus-panel td {
+            padding: 16px 12px;
+            border-bottom: 1px solid #dde4ec;
+            color: #2c3e50;
+            vertical-align: top;
+        }
+        .month-sep {
+            background: #fef5e7;
+            font-weight: 700;
+            color: #b45f06;
+            border-left: 6px solid #f1c40f;
+        }
+        .month-sep td {
+            padding: 10px 16px;
+            font-size: 1.1rem;
+        }
+        .week-no {
+            text-align: center;
+            font-weight: 700;
+            color: #2c3e50;
+            background: #f4f6f9;
+            width: 60px;
+        }
+        .topic {
+            font-weight: 600;
+            color: #1e3c5c;
+        }
+
+        /* evaluation strip */
+        .eval-box {
+            background: linear-gradient(120deg, #f9f9fc, #fff);
+            border-radius: 30px;
+            padding: 25px 30px;
+            margin: 35px 0 25px;
+            border: 2px dashed #f39c12;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .eval-item {
+            text-align: center;
+            min-width: 120px;
+            margin: 8px 5px;
+        }
+        .eval-num {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #2980b9;
+            line-height: 1;
+        }
+        .eval-label {
+            font-size: 0.9rem;
+            color: #2d3e50;
+            font-weight: 500;
+        }
+
+        /* weekly lessons with video icon */
+        .weekly-lessons {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .lesson-card {
+            background: white;
+            border-radius: 30px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.03);
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: 0.2s;
+            overflow: hidden;
+        }
+        .lesson-toggle {
+            padding: 18px 25px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: white;
+            border-left: 8px solid;
+            border-radius: 30px 30px 0 0;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        .lesson-left {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+        .lesson-icon {
+            font-size: 1.8rem;
+            width: 40px;
+            text-align: center;
+        }
+        .video-badge {
+            background: #fce4e4;
+            color: #c0392b;
+            border-radius: 50px;
+            padding: 5px 14px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            letter-spacing: 0.5px;
+            margin-left: 15px;
+        }
+        .video-badge i {
+            font-size: 0.9rem;
+        }
+        .arrow {
+            font-size: 1.6rem;
+            font-weight: 300;
+            transition: transform 0.2s;
+            color: #7f8c8d;
+        }
+        .lesson-detail {
+            display: none;
+            background: #fbfdff;
+            padding: 22px 28px;
+            border-top: 1px solid #e2eaf2;
+            border-radius: 0 0 30px 30px;
+        }
+        .detail-text {
+            font-size: 1rem;
+            color: #2c3e50;
+            margin-bottom: 18px;
+        }
+        .btn-watch {
+            background: #c0392b;
+            color: white;
+            border: none;
+            padding: 12px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 8px 18px rgba(192, 57, 43, 0.3);
+            text-decoration: none;
+        }
+        .btn-watch:hover {
+            background: #a8231a;
+            transform: translateY(-3px);
+        }
+
+        /* footer / note */
+        .footnote {
+            text-align: center;
+            margin-top: 40px;
+            color: #4a5a6e;
+            font-size: 0.9rem;
+        }
+
+        /* colors for left borders */
+        .c1 { border-left-color: #c0392b; }
+        .c2 { border-left-color: #16a085; }
+        .c3 { border-left-color: #2980b9; }
+        .c4 { border-left-color: #f39c12; }
+        .c5 { border-left-color: #8e44ad; }
+        .c6 { border-left-color: #27ae60; }
+        .c7 { border-left-color: #d35400; }
+        .c8 { border-left-color: #34495e; }
+        .c9 { border-left-color: #c0392b; }
+        .c10 { border-left-color: #16a085; }
+        .c11 { border-left-color: #2980b9; }
+        .c12 { border-left-color: #f39c12; }
+    </style>
+</head>
+<body>
+<div class="course-container">
+
+    <!-- hero section -->
+    <div class="hero-card">
+        <div class="hero-title">💼 நேரடி வணிக மேலாண்மையும் <br>தனிநபர் ஆளுமை முத்திரையும் <span style="background: #f1c40f; padding:2px 12px; border-radius:40px; font-size:1.4rem;">5.0</span></div>
+        <div class="hero-sub">Professional Direct Selling & Personal Brand Identity – Level 5.0</div>
+        <div class="advisor"><i class="fas fa-star"></i> முதன்மை ஆலோசகர்: முனைவர் சத்தியராஜ் தங்கச்சாமி (Neyakkoo)</div>
+    </div>
+
+    <!-- syllabus table (compact) -->
+    <div class="syllabus-panel">
+        <table>
+            <tr><th>வாரம்</th><th>தலைப்பு</th><th>பாடப்பொருள் விவரம்</th></tr>
+            <tr class="month-sep"><td colspan="3">📅 மாதம் 1: அடித்தளமும் மனநிலை உருவாக்கமும் (The Foundation)</td></tr>
+            <tr><td class="week-no">01</td><td class="topic">அறிமுகம் & வரலாறு</td><td>நேரடி விற்பனையின் உலகளாவிய வரலாறு, இந்தியாவின் தற்போதைய நிலை மற்றும் 2021 சட்ட விதிமுறைகள்.</td></tr>
+            <tr><td class="week-no">02</td><td class="topic">வணிக நெறிமுறைகள்</td><td>WFDSA வழிகாட்டுதல்கள் மற்றும் 'பித்தலாட்ட' (Ponzi) திட்டங்களை அடையாளம் காணுதல்.</td></tr>
+            <tr><td class="week-no">03</td><td class="topic">தொழில்முனைவோர் மனநிலை</td><td>தோல்விகளைக் கையாளுதல், SMART இலக்கு நிர்ணயித்தல் மற்றும் சுய-ஒழுக்கப் பயிற்சிகள்.</td></tr>
+            <tr><td class="week-no">04</td><td class="topic">தயாரிப்பு அறிவு</td><td>தயாரிப்பின் அம்சங்களை விட அதன் பயன்களை (Benefits vs Features) விளக்கும் கலை.</td></tr>
+            <tr class="month-sep"><td colspan="3">📅 மாதம் 2: விற்பனை உத்திகளும் தொடர்புத் திறனும் (Skill Development)</td></tr>
+            <tr><td class="week-no">05</td><td class="topic">தகவல் தொடர்பு</td><td>எலிவேட்டர் பிட்ச், உடல் மொழி மற்றும் திறம்படப் பேசும் முறைகள்.</td></tr>
+            <tr><td class="week-no">06</td><td class="topic">வாடிக்கையாளர் தேடல்</td><td>தமிழகச் சூழலுக்கு ஏற்ப 'தொடர்புப் பட்டியலை' உருவாக்குதல் மற்றும் டிஜிட்டல் அணுகுமுறைகள்.</td></tr>
+            <tr><td class="week-no">07</td><td class="topic">விளக்கக்காட்சி கலை</td><td>கதை சொல்லும் கலை (Storyselling) மற்றும் நேரடித் தயாரிப்புச் செயல்விளக்க முறைகள்.</td></tr>
+            <tr><td class="week-no">08</td><td class="topic">தடைகளைத் தகர்த்தல்</td><td>வாடிக்கையாளரின் மறுப்புகளைச் சாதகமாக மாற்றி விற்பனையை வெற்றிகரமாக நிறைவு செய்தல்.</td></tr>
+            <tr class="month-sep"><td colspan="3">📅 மாதம் 3: தலைமைத்துவமும் எண்ணிம எதிர்காலமும் (Scaling & Future)</td></tr>
+            <tr><td class="week-no">09</td><td class="topic">குழு மேலாண்மை</td><td>விற்பனைக் குழுவை வழிநடத்துதல், முறையான பயிற்சியளித்தல் மற்றும் பிறரை ஊக்கப்படுத்துதல்.</td></tr>
+            <tr><td class="week-no">10</td><td class="topic">நவீன விற்பனை</td><td>சமூக ஊடக விற்பனை, தனிநபர் ஆளுமை முத்திரை மற்றும் மின்-வணிக ஒருங்கிணைப்பு.</td></tr>
+            <tr><td class="week-no">11</td><td class="topic">நிதி மேலாண்மை</td><td>GST, வரி மேலாண்மை மற்றும் லாபத்தை மீண்டும் வணிகத்தில் முதலீடு செய்யும் முறைகள்.</td></tr>
+            <tr><td class="week-no">12</td><td class="topic">வருங்காலத் தொழில்நுட்பம்</td><td>செயற்கை நுண்ணறிவு (AI) கருவிகள் மற்றும் தமிழக நகரங்களில் உள்ள புதிய வணிக வாய்ப்புகள்.</td></tr>
+        </table>
+    </div>
+
+    <!-- evaluation cards -->
+    <div class="eval-box">
+        <div class="eval-item"><span class="eval-num">30%</span> <div class="eval-label">தொடர்புத் திறன்</div></div>
+        <div class="eval-item"><span class="eval-num">20%</span> <div class="eval-label">தொழில்முறை அறிவு</div></div>
+        <div class="eval-item"><span class="eval-num">20%</span> <div class="eval-label">எண்ணிம ஆளுமை</div></div>
+        <div class="eval-item"><span class="eval-num">30%</span> <div class="eval-label">தலைமை & நெறி</div></div>
+    </div>
+
+    <!-- weekly lesson details with video links (12 weeks) -->
+    <div class="weekly-lessons" id="weeklyLessons">
+        <!-- dynamic js will fill from array, but we can hardcode for clarity and video icons -->
+    </div>
+
+    <div class="footnote">
+        <i class="fas fa-video" style="color:#c0392b;"></i> ஒவ்வொரு பாடத்திலும் காணொலி விளக்கம் இணைக்கப்பட்டுள்ளது. 
+        பாடத்தை விரித்துப் பார்க்க கீழே சொடுக்கவும்.
+    </div>
+</div>
+
+<script>
+    // Data for all 12 weeks: icon, title, description, border color class, video link
+    const weeks = [
+        { icon: "📅", title: "வாரம் 1: அறிமுகம் & வரலாறு", desc: "நேரடி விற்பனையின் உலகளாவிய வரலாறும், இந்தியச் சூழலும், 2021 சட்ட விதிமுறைகளும். இந்த அடித்தளப் பாடம் வணிகத்தின் தோற்றத்தையும் சட்டப்பூர்வ அம்சங்களையும் விளக்குகிறது.", color: "c1", video: "https://meyveendu.blogspot.com/2026/03/2021.html" },
+        { icon: "⚖️", title: "வாரம் 2: வணிக நெறிமுறைகள்", desc: "WFDSA பன்னாட்டு வழிகாட்டுதல்கள், போலி 'பித்தலாட்ட' திட்டங்களை எப்படி அடையாளம் காண்பது, நம்பகமான வணிக நெறிகள்.", color: "c2", video: "https://meyveendu.blogspot.com/2026/03/blog-post.html" },
+        { icon: "🧠", title: "வாரம் 3: தொழில்முனைவோர் மனநிலை", desc: "தோல்விகளைக் கையாளும் மனப்பக்குவம், SMART இலக்கு நிர்ணயித்தல், தினசரி சுய-ஒழுக்கப் பயிற்சிகள்.", color: "c3", video: "https://meyveendu.blogspot.com/2026/03/blog-post_14.html" },
+        { icon: "📦", title: "வாரம் 4: தயாரிப்பு அறிவு", desc: "தயாரிப்பின் சிறப்பம்சங்களை (Features) விட பயன்களை (Benefits) சிறப்பாக எடுத்துச் சொல்லும் கலை. வாடிக்கையாளர் பார்வையில் தயாரிப்பு.", color: "c4", video: "https://meyveendu.blogspot.com/2026/03/benefits-vs-features.html" },
+        { icon: "📢", title: "வாரம் 5: தகவல் தொடர்பு", desc: "எலிவேட்டர் பிட்ச் (Elevator Pitch) பயிற்சி, நம்பிக்கை தரும் உடல் மொழி, குரல் மற்றும் பேச்சுத் திறன் மேம்பாடு.", color: "c5", video: "https://meyveendu.blogspot.com/2026/03/blog-post.html" },
+        { icon: "🔍", title: "வாரம் 6: வாடிக்கையாளர் தேடல்", desc: "தமிழகச் சூழலில் தொடர்புப் பட்டியல் (Prospecting) உருவாக்குதல், டிஜிட்டல் மூலம் புதிய நபர்களை அணுகும் முறைகள்.", color: "c6", video: "https://meyveendu.blogspot.com/2026/03/blog-post.html" },
+        { icon: "🎭", title: "வாரம் 7: விளக்கக்காட்சி கலை", desc: "Storyselling – கதை சொல்லி விற்பனை செய்யும் நுட்பம். நேரடி செயல்விளக்கங்கள் மூலம் தயாரிப்பை உணர்த்துதல்.", color: "c7", video: "https://meyveendu.blogspot.com/2026/03/blog-post.html" },
+        { icon: "🚀", title: "வாரம் 8: தடைகளைத் தகர்த்தல்", desc: "வாடிக்கையாளரின் பொதுவான மறுப்புகள் (objections) – அவற்றை சாதகமாக மாற்றி விற்பனையை வெற்றிகரமாக முடித்தல்.", color: "c8", video: "https://meyveendu.blogspot.com/2026/03/blog-post.html" },
+        { icon: "👥", title: "வாரம் 9: குழு மேலாண்மை", desc: "உங்கள் விற்பனைக் குழுவை வழிநடத்துதல், பயிற்சி அளித்தல், ஊக்குவித்தல் மற்றும் இரண்டாம் நிலை தலைவர்களை உருவாக்குதல்.", color: "c9", video: "https://meyveendu.blogspot.com/2026/03/blog-post.html" },
+        { icon: "📱", title: "வாரம் 10: நவீன விற்பனை உத்திகள்", desc: "சமூக ஊடக விற்பனை (Social selling), தனிநபர் ஆளுமை முத்திரை கட்டமைத்தல், மின்-வணிக ஒருங்கிணைப்பு.", color: "c10", video: "https://meyveendu.blogspot.com/2026/03/blog-post.html" },
+        { icon: "💰", title: "வாரம் 11: நிதி மேலாண்மை", desc: "GST மற்றும் வருமான வரி அடிப்படைகள், லாபத்தை மறுமுதலீடு செய்தல், எளிய வணிகக் கணக்கு வைத்தல் முறைகள்.", color: "c11", video: "https://meyveendu.blogspot.com/2026/03/blog-post.html" },
+        { icon: "🤖", title: "வாரம் 12: வருங்காலத் தொழில்நுட்பம்", desc: "செயற்கை நுண்ணறிவு (AI) கருவிகள், தமிழ்நாட்டின் Tier-2 நகரங்களில் வளர்ந்து வரும் வணிக வாய்ப்புகள்.", color: "c12", video: "https://meyveendu.blogspot.com/2026/03/blog-post.html" }
+    ];
+
+    const container = document.getElementById('weeklyLessons');
+    container.innerHTML = ''; // clear if any
+
+    weeks.forEach((w, index) => {
+        // create unique id for each detail section
+        const detailId = `detail-${index}`;
+
+        // main card div
+        const card = document.createElement('div');
+        card.className = 'lesson-card';
+
+        // toggle header
+        const toggle = document.createElement('div');
+        toggle.className = `lesson-toggle ${w.color}`;
+        toggle.setAttribute('onclick', `toggleDetail('${detailId}')`);
+
+        // left part with icon, title and video badge
+        const leftDiv = document.createElement('div');
+        leftDiv.className = 'lesson-left';
+
+        const iconSpan = document.createElement('span');
+        iconSpan.className = 'lesson-icon';
+        iconSpan.textContent = w.icon;
+
+        const titleSpan = document.createElement('span');
+        titleSpan.textContent = w.title;
+
+        const videoBadge = document.createElement('span');
+        videoBadge.className = 'video-badge';
+        videoBadge.innerHTML = '<i class="fas fa-play"></i> காணொலி பாடம்';
+
+        leftDiv.appendChild(iconSpan);
+        leftDiv.appendChild(titleSpan);
+        leftDiv.appendChild(videoBadge);
+
+        const arrowSpan = document.createElement('span');
+        arrowSpan.className = 'arrow';
+        arrowSpan.innerHTML = '➕'; // plus sign
+
+        toggle.appendChild(leftDiv);
+        toggle.appendChild(arrowSpan);
+
+        // detail panel
+        const detailDiv = document.createElement('div');
+        detailDiv.id = detailId;
+        detailDiv.className = 'lesson-detail';
+
+        const descP = document.createElement('p');
+        descP.className = 'detail-text';
+        descP.textContent = w.desc;
+
+        const watchBtn = document.createElement('a');
+        watchBtn.href = w.video;
+        watchBtn.target = '_blank';  // open in new tab (youtube / blog)
+        watchBtn.className = 'btn-watch';
+        watchBtn.innerHTML = '<i class="fas fa-video"></i> காணொலியைக் காண்க';
+
+        detailDiv.appendChild(descP);
+        detailDiv.appendChild(watchBtn);
+
+        card.appendChild(toggle);
+        card.appendChild(detailDiv);
+        container.appendChild(card);
+    });
+
+    // toggle function (global)
+    window.toggleDetail = function(id) {
+        const el = document.getElementById(id);
+        if (!el) return;
+        // find the arrow symbol in the same card (parent's previousElementSibling .arrow)
+        const parentCard = el.closest('.lesson-card');
+        const arrow = parentCard.querySelector('.arrow');
+        if (el.style.display === 'none' || el.style.display === '') {
+            el.style.display = 'block';
+            if (arrow) arrow.innerHTML = '➖'; // minus
+        } else {
+            el.style.display = 'none';
+            if (arrow) arrow.innerHTML = '➕'; // plus
+        }
+    };
+
+    // ensure all details are hidden initially, arrows as plus
+    window.onload = function() {
+        document.querySelectorAll('.lesson-detail').forEach(el => el.style.display = 'none');
+        document.querySelectorAll('.arrow').forEach(el => el.innerHTML = '➕');
+    };
+</script>
+
+<!-- ensure that even if user clicks link, it's a video page -->
+</body>
+</html>
