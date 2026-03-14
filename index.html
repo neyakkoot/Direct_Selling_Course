@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>நேரடி வணிகமும் தனிநபர் முத்திரையும் | முழுப் பாடம்</title>
-    <!-- Font Awesome for icons (video, expand/collapse) -->
+    <title>✨ நேரடி வணிக மேலாண்மையும் தனிநபர் ஆளுமை முத்திரையும் | Professional Direct Selling & Personal Brand Identity</title>
+    <!-- Font Awesome 6 (free) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
@@ -12,406 +12,482 @@
             padding: 0;
             box-sizing: border-box;
         }
+
         body {
-            background: #eef2f7;
+            background: radial-gradient(circle at 20% 30%, #d4e0f0, #b4c9e2);
             font-family: 'Segoe UI', 'Tamil', 'Helvetica Neue', sans-serif;
-            padding: 30px 15px;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
+            padding: 20px 10px;
+            animation: bgPulse 15s infinite alternate ease-in-out;
         }
-        .course-container {
-            max-width: 1100px;
+
+        @keyframes bgPulse {
+            0% { background: radial-gradient(circle at 20% 30%, #d4e0f0, #b4c9e2); }
+            50% { background: radial-gradient(circle at 80% 70%, #c7d9ed, #a6bbd9); }
+            100% { background: radial-gradient(circle at 30% 70%, #d9e2f2, #b8cee8); }
+        }
+
+        .course-master {
+            max-width: 1200px;
             width: 100%;
+            backdrop-filter: blur(2px);
         }
 
-        /* header card */
-        .hero-card {
-            background: linear-gradient(145deg, #ffffff 0%, #f8faff 100%);
-            padding: 35px 30px;
-            border-radius: 40px 40px 40px 0;
-            box-shadow: 0 25px 40px -15px rgba(0,40,80,0.25);
-            margin-bottom: 30px;
-            border-right: 8px solid #f39c12;
-            border-left: 8px solid #2980b9;
-        }
-        .hero-title {
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: #1a2639;
-            line-height: 1.3;
-            margin-bottom: 8px;
-        }
-        .hero-sub {
-            font-size: 1.2rem;
-            color: #2c3e50;
-            font-weight: 500;
-            letter-spacing: 0.3px;
-        }
-        .advisor {
-            margin-top: 20px;
-            background: #eafaf1;
-            padding: 12px 22px;
-            border-radius: 60px;
-            display: inline-block;
-            font-weight: 600;
-            color: #1e6f5c;
-            box-shadow: 0 3px 10px rgba(0,100,80,0.1);
-        }
-        .advisor i {
-            margin-right: 8px;
-            color: #c0392b;
-        }
-
-        /* main table (syllabus grid) */
-        .syllabus-panel {
-            background: white;
-            border-radius: 28px;
-            padding: 20px 8px 20px 20px;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+        /* floating animation for main card */
+        .hero-glow {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(15px);
+            border-radius: 70px 70px 70px 20px;
+            padding: 40px 35px;
+            box-shadow: 0 40px 60px -20px rgba(0, 20, 40, 0.5), 0 0 0 2px rgba(255, 215, 0, 0.3) inset, 0 0 20px #f0e68c;
             margin-bottom: 40px;
-            overflow-x: auto;
+            transform-origin: center;
+            animation: floatSoft 6s infinite alternate ease-in-out;
+            border-right: 6px solid #f39c12;
+            border-left: 6px solid #2980b9;
         }
-        .syllabus-panel table {
+
+        @keyframes floatSoft {
+            0% { transform: translateY(0px) scale(1); }
+            100% { transform: translateY(-12px) scale(1.005); }
+        }
+
+        .hero-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            background: linear-gradient(145deg, #1a2639, #2d3f5e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+            text-shadow: 0 5px 20px rgba(0,60,120,0.2);
+            animation: glitch 4s infinite;
+        }
+
+        .hero-sub {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2c3e50;
+            background: rgba(255,255,200,0.4);
+            display: inline-block;
+            padding: 8px 25px;
+            border-radius: 60px;
+            margin-top: 10px;
+            backdrop-filter: blur(5px);
+            animation: slideIn 1s ease-out;
+        }
+
+        .advisor-chip {
+            background: #1e3c4f;
+            color: #f7e05e;
+            padding: 14px 30px;
+            border-radius: 100px;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-top: 25px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            border: 2px solid #ffd966;
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { box-shadow: 0 0 5px #ffd966; }
+            50% { box-shadow: 0 0 20px #ffe484; }
+            100% { box-shadow: 0 0 5px #ffd966; }
+        }
+
+        /* syllabus panel with animate slide */
+        .syllabus-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border-radius: 50px;
+            padding: 20px 12px;
+            box-shadow: 0 30px 40px -20px #1a2a3a;
+            margin-bottom: 50px;
+            border: 2px solid rgba(255,255,240,0.9);
+            transform: perspective(800px) rotateX(2deg);
+            transition: transform 0.3s;
+            animation: slideUp 1s ease-out;
+        }
+
+        .syllabus-panel:hover {
+            transform: perspective(800px) rotateX(0deg) scale(1.01);
+        }
+
+        @keyframes slideUp {
+            0% { opacity: 0; transform: translateY(60px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        table {
             width: 100%;
             border-collapse: collapse;
-            min-width: 650px;
         }
-        .syllabus-panel th {
-            background: #2c3e50;
+        th {
+            background: #1f3a4b;
             color: white;
-            font-weight: 600;
-            font-size: 1rem;
-            padding: 18px 12px;
-            border-radius: 18px 18px 0 0;
-        }
-        .syllabus-panel td {
-            padding: 16px 12px;
-            border-bottom: 1px solid #dde4ec;
-            color: #2c3e50;
-            vertical-align: top;
-        }
-        .month-sep {
-            background: #fef5e7;
-            font-weight: 700;
-            color: #b45f06;
-            border-left: 6px solid #f1c40f;
-        }
-        .month-sep td {
-            padding: 10px 16px;
             font-size: 1.1rem;
+            padding: 20px 12px;
+            border-radius: 30px 30px 8px 8px;
+            letter-spacing: 1px;
         }
-        .week-no {
-            text-align: center;
-            font-weight: 700;
-            color: #2c3e50;
-            background: #f4f6f9;
-            width: 60px;
-        }
-        .topic {
-            font-weight: 600;
-            color: #1e3c5c;
-        }
-
-        /* evaluation strip */
-        .eval-box {
-            background: linear-gradient(120deg, #f9f9fc, #fff);
-            border-radius: 30px;
-            padding: 25px 30px;
-            margin: 35px 0 25px;
-            border: 2px dashed #f39c12;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .eval-item {
-            text-align: center;
-            min-width: 120px;
-            margin: 8px 5px;
-        }
-        .eval-num {
-            font-size: 2rem;
-            font-weight: 800;
-            color: #2980b9;
-            line-height: 1;
-        }
-        .eval-label {
-            font-size: 0.9rem;
-            color: #2d3e50;
+        td {
+            padding: 16px 12px;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            color: #14222e;
             font-weight: 500;
         }
+        .month-split {
+            background: #fff1cf;
+            font-weight: 700;
+            color: #a5530e;
+            border-left: 8px solid #f1c40f;
+            animation: borderPulse 2s infinite;
+        }
+        @keyframes borderPulse {
+            0% { border-left-color: #f1c40f; }
+            50% { border-left-color: #f39c12; }
+            100% { border-left-color: #f1c40f; }
+        }
 
-        /* weekly lessons with video icon */
-        .weekly-lessons {
+        .week-no {
+            background: #eef3fa;
+            font-weight: 800;
+            font-size: 1.2rem;
+            color: #1f3a4b;
+            width: 70px;
+            text-align: center;
+            border-radius: 30px 0 0 30px;
+        }
+        .topic {
+            font-weight: 700;
+            color: #0b3142;
+        }
+
+        /* evaluation moving cards */
+        .eval-strip {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 40px 0 50px;
+        }
+        .eval-bubble {
+            background: rgba(20, 40, 55, 0.9);
+            backdrop-filter: blur(6px);
+            padding: 18px 25px;
+            border-radius: 120px;
+            color: white;
             display: flex;
             flex-direction: column;
-            gap: 14px;
-        }
-        .lesson-card {
-            background: white;
-            border-radius: 30px;
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.03);
-            border: 1px solid rgba(0,0,0,0.05);
+            align-items: center;
+            box-shadow: 0 10px 0 #0e2632, 0 20px 30px black;
             transition: 0.2s;
-            overflow: hidden;
+            animation: bounce 3s infinite;
+            min-width: 140px;
         }
-        .lesson-toggle {
-            padding: 18px 25px;
+        .eval-bubble:nth-child(2) { animation-delay: 0.2s; }
+        .eval-bubble:nth-child(3) { animation-delay: 0.5s; }
+        .eval-bubble:nth-child(4) { animation-delay: 0.8s; }
+
+        @keyframes bounce {
+            0%,100%{ transform: translateY(0); }
+            50%{ transform: translateY(-12px); }
+        }
+
+        .eval-bubble .big {
+            font-size: 2.7rem;
+            font-weight: 800;
+            color: #ffde7a;
+            line-height: 1;
+        }
+
+        /* weekly lesson cards – cinematic animations */
+        .lessons-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .lesson-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            border-radius: 60px 60px 40px 40px;
+            box-shadow: 0 20px 30px -10px #2a4055, 0 0 0 2px rgba(255,255,220,0.7) inset;
+            transition: all 0.4s cubic-bezier(0.2, 0.9, 0.3, 1.2);
+            animation: cardGlide 1s ease-out backwards;
+            border-left: 12px solid;
+        }
+
+        .lesson-card:nth-child(1) { animation-delay: 0.1s; }
+        .lesson-card:nth-child(2) { animation-delay: 0.2s; }
+        .lesson-card:nth-child(3) { animation-delay: 0.3s; }
+        .lesson-card:nth-child(4) { animation-delay: 0.4s; }
+        .lesson-card:nth-child(5) { animation-delay: 0.5s; }
+        .lesson-card:nth-child(6) { animation-delay: 0.6s; }
+        .lesson-card:nth-child(7) { animation-delay: 0.7s; }
+        .lesson-card:nth-child(8) { animation-delay: 0.8s; }
+        .lesson-card:nth-child(9) { animation-delay: 0.9s; }
+        .lesson-card:nth-child(10) { animation-delay: 1.0s; }
+        .lesson-card:nth-child(11) { animation-delay: 1.1s; }
+        .lesson-card:nth-child(12) { animation-delay: 1.2s; }
+
+        @keyframes cardGlide {
+            0% { opacity: 0; transform: translateX(-50px) scale(0.9); }
+            100% { opacity: 1; transform: translateX(0) scale(1); }
+        }
+
+        .lesson-header {
+            padding: 20px 30px;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: white;
-            border-left: 8px solid;
-            border-radius: 30px 30px 0 0;
-            font-weight: 600;
-            font-size: 1.1rem;
+            font-weight: 700;
+            font-size: 1.3rem;
+            border-radius: 60px 60px 0 0;
+            transition: 0.2s;
         }
-        .lesson-left {
+
+        .lesson-header:hover {
+            background: rgba(255,255,250,0.9);
+            letter-spacing: 0.5px;
+        }
+
+        .left-head {
             display: flex;
             align-items: center;
-            gap: 18px;
+            gap: 20px;
             flex-wrap: wrap;
         }
-        .lesson-icon {
-            font-size: 1.8rem;
-            width: 40px;
-            text-align: center;
+
+        .head-icon {
+            font-size: 2.2rem;
+            filter: drop-shadow(0 5px 5px #00000030);
+            animation: rotateIcon 3s infinite;
         }
-        .video-badge {
-            background: #fce4e4;
-            color: #c0392b;
-            border-radius: 50px;
-            padding: 5px 14px;
-            font-size: 0.75rem;
+
+        @keyframes rotateIcon {
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(5deg); }
+            75% { transform: rotate(-5deg); }
+            100% { transform: rotate(0deg); }
+        }
+
+        .video-tag {
+            background: #b03a2a;
+            color: white;
+            padding: 6px 20px;
+            border-radius: 60px;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 6px 0 #641e14;
+            transition: 0.1s;
+            animation: tagWiggle 2s infinite;
+        }
+
+        @keyframes tagWiggle {
+            0%,100% { transform: rotate(0deg); }
+            10%,30% { transform: rotate(1deg); }
+            20%,40% { transform: rotate(-1deg); }
+        }
+
+        .arrow-ani {
+            font-size: 2rem;
+            transition: transform 0.4s;
+            color: #2b3d54;
+        }
+
+        .lesson-detail {
+            display: none;
+            padding: 28px 35px;
+            background: rgba(252, 253, 255, 0.9);
+            border-radius: 0 0 50px 50px;
+            border-top: 2px solid #f1c40f;
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-neon {
+            background: linear-gradient(145deg, #c03b2b, #a02010);
+            border: none;
+            color: white;
+            padding: 15px 45px;
+            border-radius: 100px;
+            font-size: 1.2rem;
             font-weight: 700;
             display: inline-flex;
             align-items: center;
-            gap: 5px;
-            letter-spacing: 0.5px;
-            margin-left: 15px;
-        }
-        .video-badge i {
-            font-size: 0.9rem;
-        }
-        .arrow {
-            font-size: 1.6rem;
-            font-weight: 300;
-            transition: transform 0.2s;
-            color: #7f8c8d;
-        }
-        .lesson-detail {
-            display: none;
-            background: #fbfdff;
-            padding: 22px 28px;
-            border-top: 1px solid #e2eaf2;
-            border-radius: 0 0 30px 30px;
-        }
-        .detail-text {
-            font-size: 1rem;
-            color: #2c3e50;
-            margin-bottom: 18px;
-        }
-        .btn-watch {
-            background: #c0392b;
-            color: white;
-            border: none;
-            padding: 12px 32px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1rem;
-            cursor: pointer;
+            gap: 15px;
+            box-shadow: 0 10px 25px #c0392b, 0 0 20px #f1c40f;
             transition: 0.2s;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            box-shadow: 0 8px 18px rgba(192, 57, 43, 0.3);
             text-decoration: none;
-        }
-        .btn-watch:hover {
-            background: #a8231a;
-            transform: translateY(-3px);
+            animation: pulseShadow 2s infinite;
         }
 
-        /* footer / note */
-        .footnote {
+        @keyframes pulseShadow {
+            0% { box-shadow: 0 5px 20px #c0392b, 0 0 10px #f3b33d; }
+            50% { box-shadow: 0 12px 35px #c0392b, 0 0 30px #f7dc6f; }
+            100% { box-shadow: 0 5px 20px #c0392b, 0 0 10px #f3b33d; }
+        }
+
+        .btn-neon:hover {
+            transform: scale(1.05) translateY(-5px);
+            background: linear-gradient(145deg, #d14535, #b82e1e);
+        }
+
+        .foot-note {
             text-align: center;
-            margin-top: 40px;
-            color: #4a5a6e;
-            font-size: 0.9rem;
+            color: #142c3c;
+            font-weight: 600;
+            margin-top: 60px;
+            font-size: 1.1rem;
+            background: rgba(255,255,210,0.5);
+            padding: 18px;
+            border-radius: 100px;
+            backdrop-filter: blur(10px);
+            animation: fadeGlow 3s infinite;
         }
 
-        /* colors for left borders */
-        .c1 { border-left-color: #c0392b; }
-        .c2 { border-left-color: #16a085; }
-        .c3 { border-left-color: #2980b9; }
-        .c4 { border-left-color: #f39c12; }
-        .c5 { border-left-color: #8e44ad; }
-        .c6 { border-left-color: #27ae60; }
-        .c7 { border-left-color: #d35400; }
-        .c8 { border-left-color: #34495e; }
-        .c9 { border-left-color: #c0392b; }
-        .c10 { border-left-color: #16a085; }
-        .c11 { border-left-color: #2980b9; }
-        .c12 { border-left-color: #f39c12; }
+        @keyframes fadeGlow {
+            0% { background: rgba(255,255,210,0.5); }
+            50% { background: rgba(255,255,170,0.8); }
+            100% { background: rgba(255,255,210,0.5); }
+        }
     </style>
 </head>
 <body>
-<div class="course-container">
+<div class="course-master">
 
-    <!-- hero section -->
-    <div class="hero-card">
-        <div class="hero-title">💼 நேரடி வணிக மேலாண்மையும் <br>தனிநபர் ஆளுமை முத்திரையும் <span style="background: #f1c40f; padding:2px 12px; border-radius:40px; font-size:1.4rem;">5.0</span></div>
-        <div class="hero-sub">Professional Direct Selling & Personal Brand Identity – Level 5.0</div>
-        <div class="advisor"><i class="fas fa-star"></i> முதன்மை ஆலோசகர்: முனைவர் சத்தியராஜ் தங்கச்சாமி (Neyakkoo)</div>
+    <!-- floating animated hero -->
+    <div class="hero-glow">
+        <div class="hero-title">💼 நேரடி வணிக மேலாண்மையும் <br>தனிநபர் ஆளுமை முத்திரையும் <span style="background: gold; padding: 5px 20px; border-radius: 80px; font-size: 1.8rem;">5.0</span></div>
+        <div class="hero-sub">Professional Direct Selling & Personal Brand Identity</div>
+        <div class="advisor-chip"><i class="fas fa-crown" style="color: gold;"></i> முதன்மை ஆலோசகர்: முனைவர் சத்தியராஜ் தங்கச்சாமி (Neyakkoo)</div>
+        <div class="hero-sub">Distributor, MiLifeStyle Marketing Global Pvt. Ltd.</div>
     </div>
 
-    <!-- syllabus table (compact) -->
+    <!-- syllabus panel with 3d tilt effect -->
     <div class="syllabus-panel">
         <table>
-            <tr><th>வாரம்</th><th>தலைப்பு</th><th>பாடப்பொருள் விவரம்</th></tr>
-            <tr class="month-sep"><td colspan="3">📅 மாதம் 1: அடித்தளமும் மனநிலை உருவாக்கமும் (The Foundation)</td></tr>
-            <tr><td class="week-no">01</td><td class="topic">அறிமுகம் & வரலாறு</td><td>நேரடி விற்பனையின் உலகளாவிய வரலாறு, இந்தியாவின் தற்போதைய நிலை மற்றும் 2021 சட்ட விதிமுறைகள்.</td></tr>
-            <tr><td class="week-no">02</td><td class="topic">வணிக நெறிமுறைகள்</td><td>WFDSA வழிகாட்டுதல்கள் மற்றும் 'பித்தலாட்ட' (Ponzi) திட்டங்களை அடையாளம் காணுதல்.</td></tr>
-            <tr><td class="week-no">03</td><td class="topic">தொழில்முனைவோர் மனநிலை</td><td>தோல்விகளைக் கையாளுதல், SMART இலக்கு நிர்ணயித்தல் மற்றும் சுய-ஒழுக்கப் பயிற்சிகள்.</td></tr>
-            <tr><td class="week-no">04</td><td class="topic">தயாரிப்பு அறிவு</td><td>தயாரிப்பின் அம்சங்களை விட அதன் பயன்களை (Benefits vs Features) விளக்கும் கலை.</td></tr>
-            <tr class="month-sep"><td colspan="3">📅 மாதம் 2: விற்பனை உத்திகளும் தொடர்புத் திறனும் (Skill Development)</td></tr>
-            <tr><td class="week-no">05</td><td class="topic">தகவல் தொடர்பு</td><td>எலிவேட்டர் பிட்ச், உடல் மொழி மற்றும் திறம்படப் பேசும் முறைகள்.</td></tr>
-            <tr><td class="week-no">06</td><td class="topic">வாடிக்கையாளர் தேடல்</td><td>தமிழகச் சூழலுக்கு ஏற்ப 'தொடர்புப் பட்டியலை' உருவாக்குதல் மற்றும் டிஜிட்டல் அணுகுமுறைகள்.</td></tr>
-            <tr><td class="week-no">07</td><td class="topic">விளக்கக்காட்சி கலை</td><td>கதை சொல்லும் கலை (Storyselling) மற்றும் நேரடித் தயாரிப்புச் செயல்விளக்க முறைகள்.</td></tr>
-            <tr><td class="week-no">08</td><td class="topic">தடைகளைத் தகர்த்தல்</td><td>வாடிக்கையாளரின் மறுப்புகளைச் சாதகமாக மாற்றி விற்பனையை வெற்றிகரமாக நிறைவு செய்தல்.</td></tr>
-            <tr class="month-sep"><td colspan="3">📅 மாதம் 3: தலைமைத்துவமும் எண்ணிம எதிர்காலமும் (Scaling & Future)</td></tr>
-            <tr><td class="week-no">09</td><td class="topic">குழு மேலாண்மை</td><td>விற்பனைக் குழுவை வழிநடத்துதல், முறையான பயிற்சியளித்தல் மற்றும் பிறரை ஊக்கப்படுத்துதல்.</td></tr>
-            <tr><td class="week-no">10</td><td class="topic">நவீன விற்பனை</td><td>சமூக ஊடக விற்பனை, தனிநபர் ஆளுமை முத்திரை மற்றும் மின்-வணிக ஒருங்கிணைப்பு.</td></tr>
-            <tr><td class="week-no">11</td><td class="topic">நிதி மேலாண்மை</td><td>GST, வரி மேலாண்மை மற்றும் லாபத்தை மீண்டும் வணிகத்தில் முதலீடு செய்யும் முறைகள்.</td></tr>
-            <tr><td class="week-no">12</td><td class="topic">வருங்காலத் தொழில்நுட்பம்</td><td>செயற்கை நுண்ணறிவு (AI) கருவிகள் மற்றும் தமிழக நகரங்களில் உள்ள புதிய வணிக வாய்ப்புகள்.</td></tr>
+            <tr><th colspan="3">📘 முழு பாடத்திட்டம் – 12 வார அதிரடி பயணம்</th></tr>
+            <tr class="month-split"><td colspan="3">📅 மாதம் 1 · அடித்தளமும் மனநிலையும் (Foundation)</td></tr>
+            <tr><td class="week-no">01</td><td class="topic">அறிமுகம் & வரலாறு</td><td>உலக நேரடி விற்பனை வரலாறு, இந்தியா & 2021 சட்டம்</td></tr>
+            <tr><td class="week-no">02</td><td>வணிக நெறிமுறைகள்</td><td>WFDSA · போலி திட்டங்களை அடையாளம் காணல்</td></tr>
+            <tr><td class="week-no">03</td><td>தொழில்முனைவோர் மனநிலை</td><td>தோல்வி மேலாண்மை · SMART இலக்கு · சுய ஒழுக்கம்</td></tr>
+            <tr><td class="week-no">04</td><td>தயாரிப்பு அறிவு</td><td>Benefits vs Features · வாடிக்கையாளர் பார்வை</td></tr>
+            <tr class="month-split"><td colspan="3">📅 மாதம் 2 · விற்பனைத் திறன்கள் (Skill up)</td></tr>
+            <tr><td class="week-no">05</td><td>தகவல் தொடர்பு</td><td>எலிவேட்டர் பிட்ச் · உடல் மொழி · குரல் நுட்பம்</td></tr>
+            <tr><td class="week-no">06</td><td>வாடிக்கையாளர் தேடல்</td><td>தமிழக ப்ராஸ்பெக்டிங் · டிஜிட்டல் அணுகுமுறை</td></tr>
+            <tr><td class="week-no">07</td><td>விளக்கக்காட்சி கலை</td><td>Storyselling · நேரடி செயல்விளக்கம்</td></tr>
+            <tr><td class="week-no">08</td><td>தடைகளைத் தகர்த்தல்</td><td>மறுப்புகளை வென்று விற்பனை நிறைவு</td></tr>
+            <tr class="month-split"><td colspan="3">📅 மாதம் 3 · தலைமை & எதிர்காலம் (Scale up)</td></tr>
+            <tr><td class="week-no">09</td><td>குழு மேலாண்மை</td><td>குழு வழிகாட்டல் · பயிற்சி · ஊக்குவிப்பு</td></tr>
+            <tr><td class="week-no">10</td><td>நவீன விற்பனை</td><td>சமூக ஊடகம் · தனிநபர் முத்திரை · e‑commerce</td></tr>
+            <tr><td class="week-no">11</td><td>நிதி மேலாண்மை</td><td>GST · வரி · லாப மறுமுதலீடு</td></tr>
+            <tr><td class="week-no">12</td><td>வருங்கால தொழில்நுட்பம்</td><td>AI கருவிகள் · தமிழக Tier-2 நகர வாய்ப்புகள்</td></tr>
         </table>
     </div>
 
-    <!-- evaluation cards -->
-    <div class="eval-box">
-        <div class="eval-item"><span class="eval-num">30%</span> <div class="eval-label">தொடர்புத் திறன்</div></div>
-        <div class="eval-item"><span class="eval-num">20%</span> <div class="eval-label">தொழில்முறை அறிவு</div></div>
-        <div class="eval-item"><span class="eval-num">20%</span> <div class="eval-label">எண்ணிம ஆளுமை</div></div>
-        <div class="eval-item"><span class="eval-num">30%</span> <div class="eval-label">தலைமை & நெறி</div></div>
+    <!-- bouncing evaluation bubbles -->
+    <div class="eval-strip">
+        <div class="eval-bubble"><span class="big">30%</span><span>தொடர்புத் திறன்</span></div>
+        <div class="eval-bubble"><span class="big">20%</span><span>தொழில்முறை அறிவு</span></div>
+        <div class="eval-bubble"><span class="big">20%</span><span>எண்ணிம ஆளுமை</span></div>
+        <div class="eval-bubble"><span class="big">30%</span><span>தலைமை & நெறி</span></div>
     </div>
 
-    <!-- weekly lesson details with video links (12 weeks) -->
-    <div class="weekly-lessons" id="weeklyLessons">
-        <!-- dynamic js will fill from array, but we can hardcode for clarity and video icons -->
-    </div>
+    <!-- animated weekly video cards (12) -->
+    <div class="lessons-grid" id="lessonsContainer"></div>
 
-    <div class="footnote">
-        <i class="fas fa-video" style="color:#c0392b;"></i> ஒவ்வொரு பாடத்திலும் காணொலி விளக்கம் இணைக்கப்பட்டுள்ளது. 
-        பாடத்தை விரித்துப் பார்க்க கீழே சொடுக்கவும்.
+    <div class="foot-note">
+        <i class="fas fa-film" style="color:#b03a2a;"></i> ஒவ்வொரு பாடமும் காணொலி வடிவில் · விரித்துப் பார்க்க card-ஐ தொடவும்
     </div>
 </div>
 
 <script>
-    // Data for all 12 weeks: icon, title, description, border color class, video link
-    const weeks = [
-        { icon: "📅", title: "வாரம் 1: அறிமுகம் & வரலாறு", desc: "நேரடி விற்பனையின் உலகளாவிய வரலாறும், இந்தியச் சூழலும், 2021 சட்ட விதிமுறைகளும். இந்த அடித்தளப் பாடம் வணிகத்தின் தோற்றத்தையும் சட்டப்பூர்வ அம்சங்களையும் விளக்குகிறது.", color: "c1", video: "https://meyveendu.blogspot.com/2026/03/2021.html" },
-        { icon: "⚖️", title: "வாரம் 2: வணிக நெறிமுறைகள்", desc: "WFDSA பன்னாட்டு வழிகாட்டுதல்கள், போலி 'பித்தலாட்ட' திட்டங்களை எப்படி அடையாளம் காண்பது, நம்பகமான வணிக நெறிகள்.", color: "c2", video: "https://meyveendu.blogspot.com/2026/03/blog-post.html" },
-        { icon: "🧠", title: "வாரம் 3: தொழில்முனைவோர் மனநிலை", desc: "தோல்விகளைக் கையாளும் மனப்பக்குவம், SMART இலக்கு நிர்ணயித்தல், தினசரி சுய-ஒழுக்கப் பயிற்சிகள்.", color: "c3", video: "https://meyveendu.blogspot.com/2026/03/blog-post_14.html" },
-        { icon: "📦", title: "வாரம் 4: தயாரிப்பு அறிவு", desc: "தயாரிப்பின் சிறப்பம்சங்களை (Features) விட பயன்களை (Benefits) சிறப்பாக எடுத்துச் சொல்லும் கலை. வாடிக்கையாளர் பார்வையில் தயாரிப்பு.", color: "c4", video: "https://meyveendu.blogspot.com/2026/03/benefits-vs-features.html" },
-        { icon: "📢", title: "வாரம் 5: தகவல் தொடர்பு", desc: "எலிவேட்டர் பிட்ச் (Elevator Pitch) பயிற்சி, நம்பிக்கை தரும் உடல் மொழி, குரல் மற்றும் பேச்சுத் திறன் மேம்பாடு.", color: "c5", video: "https://meyveendu.blogspot.com/2026/03/blog-post.html" },
-        { icon: "🔍", title: "வாரம் 6: வாடிக்கையாளர் தேடல்", desc: "தமிழகச் சூழலில் தொடர்புப் பட்டியல் (Prospecting) உருவாக்குதல், டிஜிட்டல் மூலம் புதிய நபர்களை அணுகும் முறைகள்.", color: "c6", video: "https://meyveendu.blogspot.com/2026/03/blog-post.html" },
-        { icon: "🎭", title: "வாரம் 7: விளக்கக்காட்சி கலை", desc: "Storyselling – கதை சொல்லி விற்பனை செய்யும் நுட்பம். நேரடி செயல்விளக்கங்கள் மூலம் தயாரிப்பை உணர்த்துதல்.", color: "c7", video: "https://meyveendu.blogspot.com/2026/03/blog-post.html" },
-        { icon: "🚀", title: "வாரம் 8: தடைகளைத் தகர்த்தல்", desc: "வாடிக்கையாளரின் பொதுவான மறுப்புகள் (objections) – அவற்றை சாதகமாக மாற்றி விற்பனையை வெற்றிகரமாக முடித்தல்.", color: "c8", video: "https://meyveendu.blogspot.com/2026/03/blog-post.html" },
-        { icon: "👥", title: "வாரம் 9: குழு மேலாண்மை", desc: "உங்கள் விற்பனைக் குழுவை வழிநடத்துதல், பயிற்சி அளித்தல், ஊக்குவித்தல் மற்றும் இரண்டாம் நிலை தலைவர்களை உருவாக்குதல்.", color: "c9", video: "https://meyveendu.blogspot.com/2026/03/blog-post.html" },
-        { icon: "📱", title: "வாரம் 10: நவீன விற்பனை உத்திகள்", desc: "சமூக ஊடக விற்பனை (Social selling), தனிநபர் ஆளுமை முத்திரை கட்டமைத்தல், மின்-வணிக ஒருங்கிணைப்பு.", color: "c10", video: "https://meyveendu.blogspot.com/2026/03/blog-post.html" },
-        { icon: "💰", title: "வாரம் 11: நிதி மேலாண்மை", desc: "GST மற்றும் வருமான வரி அடிப்படைகள், லாபத்தை மறுமுதலீடு செய்தல், எளிய வணிகக் கணக்கு வைத்தல் முறைகள்.", color: "c11", video: "https://meyveendu.blogspot.com/2026/03/blog-post.html" },
-        { icon: "🤖", title: "வாரம் 12: வருங்காலத் தொழில்நுட்பம்", desc: "செயற்கை நுண்ணறிவு (AI) கருவிகள், தமிழ்நாட்டின் Tier-2 நகரங்களில் வளர்ந்து வரும் வணிக வாய்ப்புகள்.", color: "c12", video: "https://meyveendu.blogspot.com/2026/03/blog-post.html" }
-    ];
+    (function() {
+        const weekData = [
+            { icon:"📅", title:"வாரம் 1: அறிமுகம் & வரலாறு", desc:"நேரடி விற்பனையின் உலகளாவிய வரலாறு, இந்தியச் சூழல், 2021 சட்ட விதிமுறைகள். இந்த அடித்தளப் பாடம் வணிகத்தின் தோற்றத்தையும் சட்டப்பூர்வ அம்சங்களையும் விளக்குகிறது.", color:"#c0392b", link:"https://meyveendu.blogspot.com/2026/03/2021.html" },
+            { icon:"⚖️", title:"வாரம் 2: வணிக நெறிமுறைகள்", desc:"WFDSA பன்னாட்டு வழிகாட்டுதல்கள், போலி 'பித்தலாட்ட' திட்டங்களை எப்படி அடையாளம் காண்பது, நம்பகமான வணிக நெறிகள்.", color:"#16a085", link:"https://meyveendu.blogspot.com/2026/03/blog-post.html" },
+            { icon:"🧠", title:"வாரம் 3: தொழில்முனைவோர் மனநிலை", desc:"தோல்விகளைக் கையாளும் மனப்பக்குவம், SMART இலக்கு நிர்ணயித்தல், தினசரி சுய-ஒழுக்கப் பயிற்சிகள்.", color:"#2980b9", link:"https://meyveendu.blogspot.com/2026/03/blog-post_14.html" },
+            { icon:"📦", title:"வாரம் 4: தயாரிப்பு அறிவு", desc:"தயாரிப்பின் சிறப்பம்சங்களை (Features) விட பயன்களை (Benefits) சிறப்பாக எடுத்துச் சொல்லும் கலை. வாடிக்கையாளர் பார்வையில் தயாரிப்பு.", color:"#f39c12", link:"https://meyveendu.blogspot.com/2026/03/benefits-vs-features.html" },
+            { icon:"📢", title:"வாரம் 5: தகவல் தொடர்பு", desc:"எலிவேட்டர் பிட்ச் பயிற்சி, நம்பிக்கை தரும் உடல் மொழி, குரல் மற்றும் பேச்சுத் திறன் மேம்பாடு.", color:"#8e44ad", link:"https://meyveendu.blogspot.com/2026/03/blog-post.html" },
+            { icon:"🔍", title:"வாரம் 6: வாடிக்கையாளர் தேடல்", desc:"தமிழகச் சூழலில் தொடர்புப் பட்டியல் (Prospecting) உருவாக்குதல், டிஜிட்டல் மூலம் புதிய நபர்களை அணுகும் முறைகள்.", color:"#27ae60", link:"https://meyveendu.blogspot.com/2026/03/blog-post.html" },
+            { icon:"🎭", title:"வாரம் 7: விளக்கக்காட்சி கலை", desc:"Storyselling – கதை சொல்லி விற்பனை செய்யும் நுட்பம். நேரடி செயல்விளக்கங்கள் மூலம் தயாரிப்பை உணர்த்துதல்.", color:"#d35400", link:"https://meyveendu.blogspot.com/2026/03/blog-post.html" },
+            { icon:"🚀", title:"வாரம் 8: தடைகளைத் தகர்த்தல்", desc:"வாடிக்கையாளரின் பொதுவான மறுப்புகள் (objections) – அவற்றை சாதகமாக மாற்றி விற்பனையை வெற்றிகரமாக முடித்தல்.", color:"#34495e", link:"https://meyveendu.blogspot.com/2026/03/blog-post.html" },
+            { icon:"👥", title:"வாரம் 9: குழு மேலாண்மை", desc:"உங்கள் விற்பனைக் குழுவை வழிநடத்துதல், பயிற்சி அளித்தல், ஊக்குவித்தல் மற்றும் இரண்டாம் நிலை தலைவர்களை உருவாக்குதல்.", color:"#c0392b", link:"https://meyveendu.blogspot.com/2026/03/blog-post.html" },
+            { icon:"📱", title:"வாரம் 10: நவீன விற்பனை", desc:"சமூக ஊடக விற்பனை, தனிநபர் ஆளுமை முத்திரை கட்டமைத்தல், மின்-வணிக ஒருங்கிணைப்பு.", color:"#16a085", link:"https://meyveendu.blogspot.com/2026/03/blog-post.html" },
+            { icon:"💰", title:"வாரம் 11: நிதி மேலாண்மை", desc:"GST மற்றும் வருமான வரி அடிப்படைகள், லாபத்தை மறுமுதலீடு செய்தல், எளிய வணிகக் கணக்கு வைத்தல் முறைகள்.", color:"#2980b9", link:"https://meyveendu.blogspot.com/2026/03/blog-post.html" },
+            { icon:"🤖", title:"வாரம் 12: வருங்கால தொழில்நுட்பம்", desc:"செயற்கை நுண்ணறிவு (AI) கருவிகள், தமிழ்நாட்டின் Tier-2 நகரங்களில் வளர்ந்து வரும் வணிக வாய்ப்புகள்.", color:"#f39c12", link:"https://meyveendu.blogspot.com/2026/03/blog-post.html" }
+        ];
 
-    const container = document.getElementById('weeklyLessons');
-    container.innerHTML = ''; // clear if any
+        const container = document.getElementById('lessonsContainer');
+        container.innerHTML = '';
 
-    weeks.forEach((w, index) => {
-        // create unique id for each detail section
-        const detailId = `detail-${index}`;
+        weekData.forEach((w, idx) => {
+            const card = document.createElement('div');
+            card.className = 'lesson-card';
+            card.style.borderLeftColor = w.color;
 
-        // main card div
-        const card = document.createElement('div');
-        card.className = 'lesson-card';
+            const header = document.createElement('div');
+            header.className = 'lesson-header';
+            header.setAttribute('onclick', `toggleDetail('det${idx}')`);
 
-        // toggle header
-        const toggle = document.createElement('div');
-        toggle.className = `lesson-toggle ${w.color}`;
-        toggle.setAttribute('onclick', `toggleDetail('${detailId}')`);
+            const leftDiv = document.createElement('div');
+            leftDiv.className = 'left-head';
+            leftDiv.innerHTML = `<span class="head-icon">${w.icon}</span><span style="font-weight:700;">${w.title}</span>`;
 
-        // left part with icon, title and video badge
-        const leftDiv = document.createElement('div');
-        leftDiv.className = 'lesson-left';
+            const videoSpan = document.createElement('span');
+            videoSpan.className = 'video-tag';
+            videoSpan.innerHTML = '<i class="fas fa-video"></i> காணொலி';
 
-        const iconSpan = document.createElement('span');
-        iconSpan.className = 'lesson-icon';
-        iconSpan.textContent = w.icon;
+            leftDiv.appendChild(videoSpan);
 
-        const titleSpan = document.createElement('span');
-        titleSpan.textContent = w.title;
+            const arrowSpan = document.createElement('span');
+            arrowSpan.className = 'arrow-ani';
+            arrowSpan.id = `arr${idx}`;
+            arrowSpan.innerHTML = '➕';
 
-        const videoBadge = document.createElement('span');
-        videoBadge.className = 'video-badge';
-        videoBadge.innerHTML = '<i class="fas fa-play"></i> காணொலி பாடம்';
+            header.appendChild(leftDiv);
+            header.appendChild(arrowSpan);
 
-        leftDiv.appendChild(iconSpan);
-        leftDiv.appendChild(titleSpan);
-        leftDiv.appendChild(videoBadge);
+            const detailDiv = document.createElement('div');
+            detailDiv.id = `det${idx}`;
+            detailDiv.className = 'lesson-detail';
+            detailDiv.innerHTML = `
+                <p style="margin-bottom:25px; font-size:1.1rem;">${w.desc}</p>
+                <a href="${w.link}" target="_blank" class="btn-neon"><i class="fas fa-play"></i> காணொலியைப் பாருங்கள்</a>
+            `;
 
-        const arrowSpan = document.createElement('span');
-        arrowSpan.className = 'arrow';
-        arrowSpan.innerHTML = '➕'; // plus sign
+            card.appendChild(header);
+            card.appendChild(detailDiv);
+            container.appendChild(card);
+        });
 
-        toggle.appendChild(leftDiv);
-        toggle.appendChild(arrowSpan);
+        window.toggleDetail = function(id) {
+            const detail = document.getElementById(id);
+            if (!detail) return;
+            const arrow = document.getElementById('arr'+id.substring(3));
+            if (detail.style.display === 'none' || detail.style.display === '') {
+                detail.style.display = 'block';
+                if (arrow) arrow.innerHTML = '➖';
+            } else {
+                detail.style.display = 'none';
+                if (arrow) arrow.innerHTML = '➕';
+            }
+        };
 
-        // detail panel
-        const detailDiv = document.createElement('div');
-        detailDiv.id = detailId;
-        detailDiv.className = 'lesson-detail';
-
-        const descP = document.createElement('p');
-        descP.className = 'detail-text';
-        descP.textContent = w.desc;
-
-        const watchBtn = document.createElement('a');
-        watchBtn.href = w.video;
-        watchBtn.target = '_blank';  // open in new tab (youtube / blog)
-        watchBtn.className = 'btn-watch';
-        watchBtn.innerHTML = '<i class="fas fa-video"></i> காணொலியைக் காண்க';
-
-        detailDiv.appendChild(descP);
-        detailDiv.appendChild(watchBtn);
-
-        card.appendChild(toggle);
-        card.appendChild(detailDiv);
-        container.appendChild(card);
-    });
-
-    // toggle function (global)
-    window.toggleDetail = function(id) {
-        const el = document.getElementById(id);
-        if (!el) return;
-        // find the arrow symbol in the same card (parent's previousElementSibling .arrow)
-        const parentCard = el.closest('.lesson-card');
-        const arrow = parentCard.querySelector('.arrow');
-        if (el.style.display === 'none' || el.style.display === '') {
-            el.style.display = 'block';
-            if (arrow) arrow.innerHTML = '➖'; // minus
-        } else {
-            el.style.display = 'none';
-            if (arrow) arrow.innerHTML = '➕'; // plus
-        }
-    };
-
-    // ensure all details are hidden initially, arrows as plus
-    window.onload = function() {
+        // initially all details hidden, arrows plus
         document.querySelectorAll('.lesson-detail').forEach(el => el.style.display = 'none');
-        document.querySelectorAll('.arrow').forEach(el => el.innerHTML = '➕');
-    };
+        document.querySelectorAll('.arrow-ani').forEach(el => el.innerHTML = '➕');
+    })();
 </script>
-
-<!-- ensure that even if user clicks link, it's a video page -->
 </body>
 </html>
