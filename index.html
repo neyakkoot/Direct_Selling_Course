@@ -769,7 +769,224 @@
 
     <!-- ========== WEEKLY VIDEO CARDS ========== -->
     <div class="lessons-grid" id="lessonsContainer"></div>
+ <!-- ========== இங்குதான் புதிய குறிப்புதவிகள் பகுதியைச் சேர்க்க வேண்டும் ========== -->
+    <!-- ========== குறிப்புதவிகள் பகுதி (References) ========== -->
+    <style>
+        /* ========== REFERENCES SECTION STYLES ========== */
+        .references-section {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            border-radius: 70px;
+            padding: 40px 35px;
+            margin: 50px 0 40px;
+            box-shadow: 0 30px 50px -20px #1a3a4a, 0 0 0 2px #f1c40f inset;
+            border: 2px solid #f39c12;
+        }
 
+        .references-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #1e3f5c;
+            text-align: center;
+            margin-bottom: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .references-title i {
+            color: #f39c12;
+            font-size: 2.5rem;
+            animation: rotateIcon 6s infinite;
+        }
+
+        .references-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .reference-card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 40px;
+            padding: 25px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            border-left: 8px solid #f39c12;
+            transition: transform 0.3s;
+        }
+
+        .reference-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 30px rgba(0,0,0,0.15);
+        }
+
+        .ref-category {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #c0392b;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px dashed #f1c40f;
+        }
+
+        .ref-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .ref-list li {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #1e3f5c;
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .ref-list li:before {
+            content: "📚";
+            position: absolute;
+            left: 0;
+            top: 2px;
+            font-size: 1rem;
+        }
+
+        .ref-list li a {
+            color: #c0392b;
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px dotted #f39c12;
+        }
+
+        .ref-list li a:hover {
+            color: #f39c12;
+        }
+
+        .reference-note {
+            background: #fef5e7;
+            border-radius: 60px;
+            padding: 20px 30px;
+            margin-top: 30px;
+            font-size: 1.1rem;
+            color: #1e3f5c;
+            border: 3px solid #f39c12;
+            text-align: center;
+            backdrop-filter: blur(5px);
+        }
+
+        .reference-note i {
+            color: #c0392b;
+            margin-right: 10px;
+            font-size: 1.5rem;
+            vertical-align: middle;
+        }
+
+        @media (max-width: 768px) {
+            .references-section {
+                padding: 25px 15px;
+            }
+            .references-title {
+                font-size: 1.8rem;
+            }
+            .reference-card {
+                padding: 20px;
+            }
+        }
+    </style>
+
+    <div class="references-section">
+        <h2 class="references-title">
+            <i class="fas fa-book-open"></i> 
+            குறிப்புதவிகள் (Comprehensive References)
+            <i class="fas fa-quote-right"></i>
+        </h2>
+        
+        <div class="references-grid">
+            <!-- 1. உலகளாவிய வரலாறு -->
+            <div class="reference-card">
+                <div class="ref-category">🌍 உலகளாவிய வரலாறும் அறநெறிகளும்</div>
+                <ul class="ref-list">
+                    <li>Tracy, B. (2020). <em>The psychology of selling: Increase your sales faster and easier than you ever thought possible.</em> Thomas Nelson.</li>
+                    <li>World Federation of Direct Selling Associations. (2024). <em>Global code of ethics and professional standards for direct selling.</em> WFDSA.</li>
+                </ul>
+            </div>
+            
+            <!-- 2. இந்திய சட்டம் -->
+            <div class="reference-card">
+                <div class="ref-category">⚖️ இந்தியச் சட்ட விதிமுறைகளும் சந்தை நிலவரமும்</div>
+                <ul class="ref-list">
+                    <li>Indian Direct Selling Association. (2025). <em>Indian direct selling: Vision 2030 - Annual survey report.</em> IDSA.</li>
+                    <li>Ministry of Consumer Affairs, Food and Public Distribution. (2021). <em>Consumer protection (Direct selling) rules, 2021.</em> Government of India.</li>
+                </ul>
+            </div>
+            
+            <!-- 3. நவீனத் தொழில்நுட்பம் -->
+            <div class="reference-card">
+                <div class="ref-category">🤖 நவீனத் தொழில்நுட்பமும் தமிழகச் சூழலும்</div>
+                <ul class="ref-list">
+                    <li>Cialdini, R. B. (2021). <em>Influence: The psychology of persuasion (New and expanded ed.).</em> Harper Business.</li>
+                    <li>Sathiyaraj Thangasamy (Neyakkoo). (2026). <em>Digital transformation and artificial intelligence (AI) agents in direct selling.</em> Anna University Press.</li>
+                </ul>
+            </div>
+            
+            <!-- 4. செயற்கை நுண்ணறிவு -->
+            <div class="reference-card">
+                <div class="ref-category">🧠 செயற்கை நுண்ணறிவும் வணிக மாதிரிப் புதுமைகளும் (AI & Business Model Innovation)</div>
+                <ul class="ref-list">
+                    <li>Aagaard, A. (2024). <em>AI-driven business model innovation: Pioneering new frontiers in value creation.</em> Springer. <a href="https://doi.org/10.1007/978-3-031-57511-2_10" target="_blank">DOI</a></li>
+                    <li>Amit, R., & Zott, C. (2021). <em>Business model innovation strategy: Transformational concepts and tools for entrepreneurial leaders.</em> Wiley.</li>
+                    <li>Jorzik, P. (2024). AI-driven business model innovation: A systematic review and research agenda. <em>Technological Forecasting and Social Change, 177</em>, 121497. <a href="https://doi.org/10.1016/j.techfore.2022.121497" target="_blank">DOI</a></li>
+                    <li>Zhang, Z. (2025). The role of artificial intelligence in business model innovation. <em>Journal of Business Research, 13(7)</em>, 507. <a href="https://doi.org/10.3390/jbr130700507" target="_blank">DOI</a></li>
+                </ul>
+            </div>
+            
+            <!-- 5. நேரடி விற்பனை & எண்ணிம மாற்றம் -->
+            <div class="reference-card">
+                <div class="ref-category">📱 நேரடி விற்பனையும் எண்ணிம மாற்றமும் (Direct Selling & Digital Transformation)</div>
+                <ul class="ref-list">
+                    <li>Bujang, S. D. A., & Selamat, A. (2011). Model checking agent of SMS management system for direct sales and network marketing. <em>Proceeding of Knowledge Management International Conference</em>, 1–6. <a href="https://doi.org/10.1109/KM.2011.5958882" target="_blank">DOI</a></li>
+                    <li>Epixel MLM Software. (2025). <em>How AI is transforming the future of direct sales and MLM.</em> <a href="https://www.epixelmlmsoftware.com/blog/ai-integrated-direct-selling-transformation" target="_blank">Link</a></li>
+                    <li>World Federation of Direct Selling Associations. (2020). <em>Global direct selling industry statistics.</em> <a href="https://www.wfdsa.org" target="_blank">WFDSA.org</a></li>
+                </ul>
+            </div>
+            
+            <!-- 6. தரவு & CRM -->
+            <div class="reference-card">
+                <div class="ref-category">📊 தரவு மேலாண்மையும் வாடிக்கையாளர் உறவும் (Data & CRM)</div>
+                <ul class="ref-list">
+                    <li>Burk, S., Sweenor, D., & Miner, G. (2018). It's all analytics—Part II: Designing an integrated AI, analytics, and data science architecture for your organization. <em>Journal of Business Analytics, 1(1)</em>, 114. <a href="https://doi.org/10.1080/2573234X.2018.1500132" target="_blank">DOI</a></li>
+                    <li>Ramalingam, S., & Surampudi, Y. (2022). AI-powered customer relationship management in retail: Enhancing personalization and predictive insights using generative AI models. <em>Journal of Retailing and Consumer Services, 64</em>, 102774. <a href="https://doi.org/10.1016/j.jretconser.2021.102774" target="_blank">DOI</a></li>
+                    <li>Pang, C. (2025). Towards data systems that are business semantic-centric and AI agents-assisted. <em>arXiv</em>. <a href="https://arxiv.org/abs/2506.05520" target="_blank">arXiv</a></li>
+                </ul>
+            </div>
+            
+            <!-- 7. இந்தியச் சந்தை & தொழில்முனைவு -->
+            <div class="reference-card">
+                <div class="ref-category">🇮🇳 இந்தியச் சந்தையும் தொழில்முனைவு ஆய்வுகளும் (Indian Emerging Market & Entrepreneurship)</div>
+                <ul class="ref-list">
+                    <li>Saqib, N. (2025). Frugal business model innovation in an Indian emerging market: A multiple case study. <em>Asia Pacific Journal of Innovation and Entrepreneurship, 19(2)</em>, 167–185. <a href="https://doi.org/10.1108/APJIE-11-2023-0227" target="_blank">DOI</a></li>
+                    <li>Saqib, N., Amin, F., Gupta, S., & Satar, M. S. (2025). Digital business model innovation: Scale development and validation. <em>Business Process Management Journal, 31(5)</em>, 1636–1662.</li>
+                    <li>Saqib, N., & Satar, M. (2021). Exploring business model innovation for competitive advantage: a lesson from an emerging market. <em>International Journal of Innovation Science, 13(4)</em>, 477–491.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- மேலதிக குறிப்பு -->
+        <div class="reference-note">
+            <i class="fas fa-info-circle"></i> 
+            இப்பாடத்திட்டத்தில் இடம்பெற்றுள்ள அனைத்துத் தரவுகளும் இந்திய அரசின் 2021 நேரடி விற்பனை விதிகளுக்கு உட்பட்டும், உலகளாவிய நேரடி விற்பனைச் சங்கங்களின் கூட்டமைப்பு (WFDSA) வகுத்துள்ள அறநெறித் தரங்களுக்கு இணையாகவும் தொகுக்கப்பட்டுள்ளன.
+        </div>
+
+        <!-- முழு மேற்கோள் பக்கத்திற்கான இணைப்பு -->
+        <div style="text-align: center; margin-top: 30px;">
+            <a href="https://meyveendu.blogspot.com/2026/03/comprehensive-references.html" target="_blank" class="btn-neon" style="display: inline-flex; align-items: center; gap: 15px; padding: 12px 35px;">
+                <i class="fas fa-external-link-alt"></i> முழு குறிப்புதவிகள் பக்கத்தைப் பார்க்க
+            </a>
+        </div>
+    </div>
     <!-- ========== ANIMATED FOOTER ========== -->
     <div class="animated-footer">
         <!-- முதல் வரி: காணொலி பாடம் அட்டை -->
