@@ -363,16 +363,93 @@
     </style>
 </head>
 <body>
-<div class="course-master">
-
-    <!-- floating animated hero -->
-    <div class="hero-glow">
-        <div class="hero-title">💼 நேரடி வணிக மேலாண்மையும் <br>தனிநபர் ஆளுமை முத்திரையும் <span style="background: gold; padding: 5px 20px; border-radius: 80px; font-size: 1.8rem;">5.0</span></div>
-        <div class="hero-sub">Professional Direct Selling & Personal Brand Identity</div>
-        <div class="advisor-chip"><i class="fas fa-crown" style="color: gold;"></i> பயிற்றுநர்: முனைவர் சத்தியராஜ் தங்கச்சாமி (Neyakkoo)</div>
-        <div class="hero-sub">Dr. Sathiyaraj Thangasamy B.Lit., M.A., M.A., M.Phil., TPT., Ph.D., NET.,</div>
-        <div class="hero-sub"> Coach & Distributor, MiLifeStyle Marketing Global Pvt. Ltd.</div>
+<!-- floating animated hero with profile photo and enhanced typography -->
+<div class="hero-glow" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 30px;">
+    <div style="flex: 1; min-width: 300px;">
+        <!-- முக்கிய தலைப்பு -->
+        <div class="hero-title" style="font-size: 2.8rem; font-weight: 800; line-height: 1.2; margin-bottom: 15px;">
+            💼 நேரடி வணிக மேலாண்மையும் <br>தனிநபர் ஆளுமை முத்திரையும் 
+            <span style="background: linear-gradient(145deg, #ffd966, #f1c40f); padding: 8px 25px; border-radius: 80px; font-size: 2rem; color: #1a2639; box-shadow: 0 5px 0 #b87c1b; display: inline-block; margin-top: 10px;">5.0</span>
+        </div>
+        
+        <!-- ஆங்கில துணைத் தலைப்பு -->
+        <div class="hero-sub" style="font-size: 1.4rem; background: rgba(255,255,255,0.3); backdrop-filter: blur(10px); padding: 10px 25px; border-radius: 60px; margin-bottom: 20px; border: 2px solid rgba(255,215,0,0.5); display: inline-block;">
+            Professional Direct Selling & Personal Brand Identity
+        </div>
+        
+        <!-- பயிற்றுநர் பெயர் (சிறப்பம்சமாக) -->
+        <div class="advisor-chip" style="background: linear-gradient(145deg, #1e3c4f, #0f2c3a); color: #f7e05e; padding: 18px 35px; border-radius: 100px; display: inline-flex; align-items: center; gap: 15px; font-weight: 700; font-size: 1.5rem; margin: 15px 0; border: 3px solid #ffd966; box-shadow: 0 10px 25px rgba(0,0,0,0.3);">
+            <i class="fas fa-crown" style="color: #ffd966; font-size: 2rem; filter: drop-shadow(0 0 10px gold);"></i> 
+            பயிற்றுநர்: முனைவர் சத்தியராஜ் தங்கச்சாமி (Neyakkoo)
+        </div>
+        
+        <!-- பட்டங்கள் (ஒளிரும் வண்ணத்தில்) -->
+        <div class="hero-sub" style="font-size: 1.2rem; background: linear-gradient(145deg, #2d4b65, #1d3342); color: #ffffff; padding: 15px 28px; border-radius: 60px; margin: 15px 0; border-left: 8px solid #f1c40f; border-right: 8px solid #f1c40f; box-shadow: 0 10px 20px rgba(0,0,0,0.2);">
+            <i class="fas fa-graduation-cap" style="color: #f1c40f; margin-right: 10px;"></i> 
+            Dr. Sathiyaraj Thangasamy B.Lit., M.A., M.A., M.Phil., TPT., Ph.D., NET.,
+        </div>
+        
+        <!-- பதவி விவரம் -->
+        <div class="hero-sub" style="font-size: 1.2rem; background: rgba(255,255,240,0.95); color: #1e3f5c; padding: 15px 30px; border-radius: 60px; border: 3px solid #f39c12; box-shadow: 0 8px 0 #b87c1b; display: inline-flex; align-items: center; gap: 12px; font-weight: 600;">
+            <i class="fas fa-briefcase" style="color: #c0392b;"></i>
+            Coach & Distributor, MiLifeStyle Marketing Global Pvt. Ltd.
+            <i class="fas fa-check-circle" style="color: #27ae60;"></i>
+        </div>
     </div>
+    
+    <!-- வலப்பக்கத்தில் வட்ட வடிவில் இயங்கும் ஒளிப்படம் -->
+    <div style="flex-shrink: 0; text-align: center; margin: 10px auto;">
+        <div style="position: relative;">
+            <!-- பளபளப்பான வட்ட வெளிச்சம் -->
+            <div style="position: absolute; top: -10px; left: -10px; right: -10px; bottom: -10px; background: radial-gradient(circle, rgba(255,215,0,0.6) 0%, rgba(255,215,0,0) 70%); border-radius: 50%; animation: pulseGlow 3s infinite;"></div>
+            <!-- படம் -->
+            <img src="https://raw.githubusercontent.com/neyakkoot/Direct_Selling_Course/main/Sathiyaraj.png"
+                 alt="Dr. Sathiyaraj Thangasamy"
+                 style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; border: 8px solid gold; box-shadow: 0 30px 40px rgba(0,0,0,0.4), 0 0 50px #f1c40f; animation: profileFloat 6s infinite ease-in-out; position: relative; z-index: 10;"
+                 onerror="this.style.display='none'; this.parentElement.style.display='none';">
+        </div>
+        <!-- படத்தின் கீழ் சிறு விளக்கம் -->
+        <div style="margin-top: 20px; background: rgba(0,0,0,0.6); backdrop-filter: blur(8px); color: #ffd966; padding: 8px 20px; border-radius: 60px; font-weight: 600; border: 2px solid gold; display: inline-block;">
+            <i class="fas fa-star"></i> பயிற்றுநர் <i class="fas fa-star"></i>
+        </div>
+    </div>
+</div>
+
+<!-- தேவையான கூடுதல் அனிமேஷன்கள் -->
+<style>
+    @keyframes profileFloat {
+        0%,100% { transform: translateY(0) scale(1); }
+        50% { transform: translateY(-15px) scale(1.02); }
+    }
+    
+    @keyframes pulseGlow {
+        0%,100% { opacity: 0.5; transform: scale(1); }
+        50% { opacity: 0.8; transform: scale(1.1); }
+    }
+    
+    /* ஏற்கனவே உள்ள .hero-glov பாணிகளை மேம்படுத்துதல் */
+    .hero-glow {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(20px);
+        border-radius: 70px 70px 70px 20px;
+        padding: 40px 35px;
+        box-shadow: 0 40px 60px -20px rgba(0, 20, 40, 0.5), 0 0 0 3px rgba(255, 215, 0, 0.5) inset, 0 0 40px #f0e68c;
+        margin-bottom: 40px;
+        animation: floatSoft 6s infinite alternate ease-in-out;
+        border-right: 8px solid #f39c12;
+        border-left: 8px solid #2980b9;
+    }
+    
+    /* பதிலளிக்கக்கூடிய வடிவமைப்பு */
+    @media (max-width: 768px) {
+        .hero-glow {
+            text-align: center;
+        }
+        .hero-glow > div:first-child {
+            text-align: center;
+        }
+    }
+</style>
 
     <!-- syllabus panel with 3d tilt effect -->
     <div class="syllabus-panel">
