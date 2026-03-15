@@ -407,12 +407,220 @@
     <!-- animated weekly video cards (12) -->
     <div class="lessons-grid" id="lessonsContainer"></div>
 
-    <div class="foot-note">
-        <i class="fas fa-film" style="color:#b03a2a;"></i> ஒவ்வொரு பாடமும் காணொலி வடிவில்· விரித்துப் பார்க்க card-ஐ தொடவும்
-    </div>
-    
-    <div class="foot-note">        
-        <i class="fas fa-film" style="color:#b03a2a;"></i> நீங்கள் மூன்று மாத காலப் பயிற்சியைப் பெற்று விட்டீர்களா? தொழில்மூலம் உங்களின் கனவை அடைய விரும்புகின்றீர்களா? நேரடி விற்பனையில் இறங்கத் தயாராகி விட்டீர்களா? 9600370671 எண்ணிற்குத் தொடர்புகொள்ளுங்கள் வழிகாட்டுகின்றேன்.
+    <!-- ========== அழகூட்டப்பட்ட இயங்கும் அடிக்குறிப்பு ========== -->
+    <style>
+        .animated-footer {
+            background: linear-gradient(145deg, #1e3f5c, #143244);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-radius: 100px 100px 40px 40px;
+            padding: 35px 30px 40px;
+            margin: 60px 0 20px;
+            box-shadow: 0 40px 50px -20px #0e2632, 0 0 0 3px #f1c40f inset, 0 0 30px #f7dc6f;
+            border: 2px solid #ffdb8e;
+            animation: footerGlow 4s infinite alternate;
+            text-align: center;
+        }
+
+        @keyframes footerGlow {
+            0% { box-shadow: 0 30px 40px -20px #0e2632, 0 0 0 3px #f1c40f, 0 0 20px #f7b731; }
+            100% { box-shadow: 0 50px 60px -15px #08212b, 0 0 0 5px #f3b33d, 0 0 50px #ffe066; }
+        }
+
+        .video-badge-footer {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: #b03a2a;
+            color: white;
+            padding: 14px 32px;
+            border-radius: 80px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 0 #641e14, 0 15px 30px black;
+            border: 1px solid #ffc107;
+            animation: badgeWobble 3s infinite;
+        }
+
+        @keyframes badgeWobble {
+            0%,100% { transform: rotate(0deg); }
+            20% { transform: rotate(2deg); }
+            40% { transform: rotate(-2deg); }
+            60% { transform: rotate(1deg); }
+        }
+
+        .video-badge-footer i {
+            font-size: 2rem;
+            animation: cameraShake 2s infinite;
+        }
+
+        @keyframes cameraShake {
+            0%,100% { transform: scale(1); }
+            25% { transform: scale(1.2); }
+            50% { transform: scale(1); }
+            75% { transform: scale(1.1); }
+        }
+
+        .message-line {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff9e0;
+            text-shadow: 2px 2px 0 #1f3f5c;
+            margin: 20px 0 15px;
+            background: rgba(0,0,0,0.2);
+            padding: 12px 20px;
+            border-radius: 60px;
+            display: inline-block;
+            backdrop-filter: blur(5px);
+            animation: textPulse 3s infinite;
+        }
+
+        @keyframes textPulse {
+            0% { text-shadow: 2px 2px 0 #1f3f5c; }
+            50% { text-shadow: 4px 4px 0 #b03a2a; }
+            100% { text-shadow: 2px 2px 0 #1f3f5c; }
+        }
+
+        .cta-number {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            background: #fee3b8;
+            padding: 20px 35px;
+            border-radius: 120px;
+            margin: 20px 0 10px;
+            border: 4px dashed #f39c12;
+            box-shadow: 0 20px 30px -10px #0b2c3b;
+        }
+
+        .number-pulse {
+            background: #1e3f5c;
+            color: #ffdb8e;
+            font-size: 2.2rem;
+            font-weight: 800;
+            padding: 15px 40px;
+            border-radius: 90px;
+            letter-spacing: 3px;
+            box-shadow: 0 0 0 5px #f1c40f, 0 15px 25px black;
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            animation: numberGlow 1.5s infinite alternate;
+        }
+
+        @keyframes numberGlow {
+            0% { box-shadow: 0 0 0 4px #f1c40f, 0 10px 20px black; transform: scale(1); }
+            100% { box-shadow: 0 0 0 10px #f7dc6f, 0 20px 30px black; transform: scale(1.02); }
+        }
+
+        .call-icon {
+            background: #c0392b;
+            color: white;
+            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            animation: ring 2s infinite;
+        }
+
+        @keyframes ring {
+            0%,100% { transform: rotate(0deg); }
+            10%,30% { transform: rotate(15deg); }
+            20%,40% { transform: rotate(-15deg); }
+        }
+
+        .guide-text {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #0d3d4c;
+            background: #fffad0;
+            padding: 12px 30px;
+            border-radius: 60px;
+            margin-top: 20px;
+            border: 2px solid #f39c12;
+            display: inline-block;
+            box-shadow: 0 8px 0 #b87c1b;
+        }
+
+        .guide-text i {
+            color: #c0392b;
+            margin-right: 8px;
+            animation: heartBeat 1s infinite;
+        }
+
+        @keyframes heartBeat {
+            0%,100% { transform: scale(1); }
+            30% { transform: scale(1.3); color: #f39c12; }
+        }
+
+        .dream-emoji {
+            font-size: 2rem;
+            filter: drop-shadow(0 0 8px gold);
+            animation: floatEmoji 3s infinite;
+            display: inline-block;
+        }
+
+        @keyframes floatEmoji {
+            0%,100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+
+    <!-- அழகிய அடிக்குறிப்பு HTML -->
+    <div class="animated-footer">
+        <!-- முதல் வரி: காணொலி பாடம் அட்டை -->
+        <div class="video-badge-footer">
+            <i class="fas fa-film"></i> 
+            <span>ஒவ்வொரு பாடமும் காணொலி வடிவில் · விரித்துப் பார்க்க card-ஐ தொடவும்</span>
+            <i class="fas fa-caret-down" style="font-size: 2rem; animation: bounceDown 2s infinite;"></i>
+        </div>
+
+        <!-- உந்துதல் வாசகம் + எமோஜி அனிமேஷன் -->
+        <div class="message-line">
+            <span class="dream-emoji">💭✨</span> 
+            நீங்கள் மூன்று மாத காலப் பயிற்சியைப் பெற்று விட்டீர்களா? 
+            <span class="dream-emoji">🚀🌟</span>
+        </div>
+
+        <div style="font-size: 1.6rem; color: #fff9dd; margin: 15px 0; text-shadow: 3px 3px 0 #1f3f5c;">
+            தொழில்மூலம் உங்களின் கனவை அடைய விரும்புகின்றீர்களா? <i class="fas fa-question-circle" style="color: #f7dc6f;"></i>
+        </div>
+
+        <div style="font-size: 1.7rem; font-weight: bold; background: #f39c12; color: #1e3f5c; padding: 12px 30px; border-radius: 80px; display: inline-block; margin: 10px 0; box-shadow: 0 10px 0 #b87c1b; transform: rotate(-1deg);">
+            ✅ நேரடி விற்பனையில் இறங்கத் தயாராகி விட்டீர்களா?
+        </div>
+
+        <!-- தொடர்பு எண் பகுதி (அதிரும்) -->
+        <div class="cta-number">
+            <div class="call-icon">
+                <i class="fas fa-phone-alt"></i>
+            </div>
+            <div class="number-pulse">
+                <i class="fas fa-phone"></i> 9600370671
+            </div>
+            <div style="background: #c0392b; color: white; padding: 15px 30px; border-radius: 60px; font-size: 1.5rem; font-weight: 700; box-shadow: 0 10px 0 #641e14;">
+                <i class="fas fa-hand-point-right"></i> உடனே அழையுங்கள்
+            </div>
+        </div>
+
+        <!-- வழிகாட்டும் வாசகம் -->
+        <div class="guide-text">
+            <i class="fas fa-heart"></i> வழிகாட்டுகின்றேன் · முனைவர் சத்தியராஜ் தங்கச்சாமி (Neyakkoo) 
+            <i class="fas fa-heart"></i>
+        </div>
+
+        <!-- கூடுதல் மின்னல் விளைவு (சிறிய அனிமேஷன்) -->
+        <div style="margin-top: 25px; display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+            <span style="background: #ffd966; color: #1f3f5c; padding: 8px 18px; border-radius: 40px; font-weight: 600;"><i class="fas fa-star"></i> 24/7 ஆதரவு</span>
+            <span style="background: #ffd966; color: #1f3f5c; padding: 8px 18px; border-radius: 40px; font-weight: 600;"><i class="fas fa-whatsapp"></i> WhatsApp</span>
+            <span style="background: #ffd966; color: #1f3f5c; padding: 8px 18px; border-radius: 40px; font-weight: 600;"><i class="fas fa-video"></i> நேரடி ஆலோசனை</span>
+        </div>
     </div>
 </div>
 
